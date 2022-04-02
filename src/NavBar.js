@@ -19,23 +19,38 @@ const NavBar = ({ accounts, setAccounts}) => {
 return (
   <Flex justify="space-between" align="center" padding= "30px">
     {/* Left Side - Social media Icons */}
-    <Flex justify="space-around" width= "40%" padding= "0 75px">Facebook</Flex>
-    <div>Twitter</div>
-    <div>Email</div>
+    <Flex justify="space-around" width= "40%" padding= "0 75px">
+      <Link href="https://facebook.com">
+        <image src={Facebook} boxSize="42px" margin="0 15px" />
+    </Link>
+      <Link href="https://twitter.com">
+        <image src={Facebook} boxSize="42px" margin="0 15px" />
+      </Link>
+      <Link href="https://gmail.com">
+        <image src={Facebook} boxSize="42px" margin="0 15px" />
+    </Link>
 
     {/*Right Side - Sections and Connect*/}
-    <div>About</div>
-    <div>Mint</div>
-    <div>Team</div>
+    <Flex
+      justify="space-around"
+      align="center"
+      width="40%"
+      padding="30px"
+      >
+      <Box margin="0 15px">About</Box>
+      <Spacer />
+      <Box margin="0 15px">Mint</Box>
+      <Spacer />
+      <Box margin="0 15px">Team</Box>
+      <Spacer />
 
-    {/*Connect*/}
-    {isConnected ? (
-      <p>Connected</p>
-    ) : (
-      <button onClick={connectAccount}>Connect</button>
-    )}
+        {/*Connect*/}
+      {isConnected ? (
+        <Box>Connected</Box>
+      ) : (
+        <button onClick={connectAccount}>Connect</button>
+      )};
 
-  </Flex>
  );
 };
 
